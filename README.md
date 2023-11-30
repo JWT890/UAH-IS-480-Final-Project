@@ -22,3 +22,18 @@ This script checks to see if telnet is installed on the system. If it is, the us
 Usage: run the dpkg -l | grep telnet command to see if its installed. It it is run the telnetCheck.sh script to uninstall it by typing y when prompted. Run the dpkg -l command again to check if its still there or not
 
 ######################################
+
+x11forward.sh / STIG UBTU-20-010048 
+
+This script checks to see if x11forwarding is set to either yes or no. If x11forwarding is set to yes, run this script to comment out the yes one and add one saying x11forwarding no.
+
+Usage: run the grep -q 'X11Forwarding yes' /etc/ssh/sshd_config* first to check if its set to set to either yes or no. If set to yes, run the script to change it to x11forwarding no. Proceed to run the prior grep command
+to see if the script has worked or not or go check /etc/ssh/sshd_config. 
+
+##############################################
+
+CAT2 scripts
+
+#######################################
+
+aidecheck.sh / STIG UBTU-20-010450
