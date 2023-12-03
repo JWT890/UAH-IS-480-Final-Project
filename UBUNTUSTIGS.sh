@@ -166,6 +166,7 @@ if [[ "$checkScreenLock" == *true* ]]; then
 else
 	# tells if not compliant
 	echo "System does not have screen lock enabled and is not compliant"
+fi
 
 # statement that checks to determine if command is false
 if [[ "$checkScreenLock" != *true* ]]; then
