@@ -37,3 +37,43 @@ CAT2 scripts
 #######################################
 
 aidecheck.sh / STIG UBTU-20-010450
+
+This script checks to see if aide is installed on the system. If it isn't, the user is asked if they want to install or not. They user is also asked if they want to initalize aide or not
+
+Usage: run the dpkg -l | grep aide command to see if its installed. It if it isn't run the aidecheck.sh script to install it by typing y or Y when prompted. Run the dpkg -l command afterwards to check for installation.
+
+#######################################
+
+apt.sh / STIG UBTU-20-010449
+
+This script checks to see if both Unattended-Upgrades conditions are both set to true. If they are not, run the script to change both to true
+
+Usage: Check the /etc/apt/apt.conf.d/50unattended-upgrades path by running the command: grep -i remove-unused /etc/apt/apt.conf.d/50unattended-upgrades to check if both are set to true. If one or both are either missing
+or not set to true, run the apt.sh script to change the conditions to both be true
+
+#######################################
+
+inactiveAccount.sh / STIG UBTU-20-010409 
+
+This script checks to see if INACTIVE in /etc/default/useradd path is set 35. If it is not, run the script to change it to 35.
+
+Usage: run the sudo grep INACTIVE /etc/default/useradd command to check to see if INACTIVE value is set to 35 or not. If it isn't set at 35, run the inactiveAccount.sh script to change the value to be 35. Check afterwards by running the
+sudo grep INACTIVE /etc/default/useradd command
+
+#######################################
+
+secCheck.sh / STIG UBTU-20-010004 
+
+This script checks to see if the GUI screen lock is enabled. If it is not, run the script to enable it. The user is asked if they want to enabled or not
+
+Usage: run the sudo gsettings get org.gnome.desktop.screensaver lock-enabled command to check if screen lock is enabled or not. If it isn't, run the secCheck.sh script to enable screen lock.
+
+#######################################
+
+usbstorage.sh / STIG UBTU-20-010461 
+
+This script checks to see if the USB storage kernel is disabled or not. If is enabled, run the script to disable it.
+
+Usage: run the grep usb-storage /etc/modprobe.d/* | grep "/bin/true" command to first check if it's present or not. If it isn't, run the script to add install usb-storage /bin/true to the DISASTIG.conf file in 
+/etc/modprobe.d path
+
