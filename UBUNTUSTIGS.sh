@@ -34,7 +34,7 @@ if [[ "checkRebootTarget" != *true* ]]; then
         else exit 1 && echo "Not masked"
         fi
 fi
-
+sleep 3
 # STIG UBTU-20-010405 CAT 1
 
 if dpkg -l | grep telnet; then
@@ -50,6 +50,8 @@ if dpkg -l | grep telnet; then
 else
         echo "Telnet is not installed"
 fi
+
+sleep 3
 
 # STIG UBTU-20-010048 CAT 1
 
@@ -72,6 +74,8 @@ service sshd restart
 
 # prints check with the command previously used
 echo "Check to see using the relevant command to check"
+
+sleep 3
 
 # STIG UBTU-20-010450 CAT 2
 
@@ -110,6 +114,8 @@ else
 	fi
 fi
 
+sleep 3
+
 # STIG UBTU-20-010449 CAT2
 
 # path to the target file
@@ -129,6 +135,8 @@ else
 	# prints if it fails
 	echo "Error: File $path does not exist"
 fi
+
+sleep 3
 
 # STIG UBTU-20-010409 CAT 2
 
@@ -153,6 +161,7 @@ else
 	fi
 fi
 
+sleep 3
 
 # STIG UBTU-20-010004 CAT 2
 
@@ -182,6 +191,8 @@ if [[ "$checkScreenLock" != *true* ]]; then
 	else exit 1 && echo "screen lock not enabled"
 	fi
 fi
+
+sleep 3
 
 # STIG UBTU-20-010461 CAT 2
 
