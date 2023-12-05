@@ -74,6 +74,9 @@ usbstorage.sh / STIG UBTU-20-010461
 
 This script checks to see if the USB storage kernel is disabled or not. If is enabled, run the script to disable it.
 
+Usage: run the grep usb-storage /etc/modprobe.d/* | grep "/bin/true" command to first check if it's present or not. If it isn't, run the script to add install usb-storage /bin/true to the DISASTIG.conf file in 
+/etc/modprobe.d path
+
 ############################################################
 
 UBUNTUSTIGS.sh / Combined Ubuntu Stig script
@@ -81,7 +84,3 @@ UBUNTUSTIGS.sh / Combined Ubuntu Stig script
 This script is the combined script of the CAT 1 and CAT 2 scripts
 
 Usage: run this script if you would rather have them all run instead of going one by one
-
-Usage: run the grep usb-storage /etc/modprobe.d/* | grep "/bin/true" command to first check if it's present or not. If it isn't, run the script to add install usb-storage /bin/true to the DISASTIG.conf file in 
-/etc/modprobe.d path
-
